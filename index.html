@@ -6,13 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smriti Hari | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            darkPurple: '#1e1b2e',
+            softPurple: '#a78bfa',
+            earthyGreen: '#4a635d',
+            earthyBeige: '#f3f0e0'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          },
+          animation: {
+            fadeIn: 'fadeIn 1s ease-in-out'
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0 },
+              '100%': { opacity: 1 }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 
-<body class="bg-white text-gray-800 font-sans">
-  <header class="bg-gray-100 py-6 shadow">
+<body class="bg-white text-gray-800 dark:bg-darkPurple dark:text-white font-sans animate-fadeIn">
+  <header class="bg-gray-100 dark:bg-darkPurple py-6 shadow">
     <div class="max-w-4xl mx-auto px-4">
-      <h1 class="text-3xl font-bold">Smriti Hari</h1>
-      <p class="text-lg">Student | Developer | Tech Enthusiast</p>
+      <div class="flex items-center justify-between">
+        <div>
+          <h1 class="text-3xl font-bold">Smriti Hari</h1>
+          <p class="text-lg text-gray-600 dark:text-softPurple">Student | Developer | Tech Enthusiast</p>
+        </div>
+        <button id="toggle-dark" class="bg-gray-300 dark:bg-softPurple text-black dark:text-white px-4 py-2 rounded hover:scale-105 transition-transform">Toggle Theme</button>
+      </div>
     </div>
   </header>
 
@@ -30,15 +68,15 @@
     <section id="projects">
       <h2 class="text-2xl font-semibold mb-4">Projects</h2>
       <ul class="space-y-4">
-        <li class="border rounded p-4">
+        <li class="border rounded p-4 dark:border-softPurple">
           <h3 class="font-bold text-lg">FireWatch</h3>
           <p>An AI-driven system to predict wildfires and display real-time risk maps.</p>
-          <a href="#" class="text-blue-600 underline">View on GitHub</a>
+          <a href="#" class="text-blue-600 dark:text-softPurple underline">View on GitHub</a>
         </li>
-        <li class="border rounded p-4">
+        <li class="border rounded p-4 dark:border-softPurple">
           <h3 class="font-bold text-lg">Credit Card Fraud Detection</h3>
           <p>Used machine learning to classify transactions and detect fraud with high accuracy.</p>
-          <a href="#" class="text-blue-600 underline">View on GitHub</a>
+          <a href="#" class="text-blue-600 dark:text-softPurple underline">View on GitHub</a>
         </li>
       </ul>
     </section>
@@ -47,6 +85,7 @@
     <section id="experience">
       <h2 class="text-2xl font-semibold mb-4">Experience</h2>
       <ul class="list-disc pl-6">
+        <li>Data Science and Research Intern - City of Edmonton</li>
         <li>Machine Learning Fellow - AI4Good Lab</li>
         <li>IT Director - ESS</li>
         <li>VP Outreach - Millennium STEM Alberta</li>
@@ -56,14 +95,21 @@
     <!-- Contact Section -->
     <section id="contact">
       <h2 class="text-2xl font-semibold mb-4">Contact</h2>
-      <p>Email: <a href="mailto:smriti@email.com" class="text-blue-600 underline">smriti@email.com</a></p>
-      <p>GitHub: <a href="https://github.com/smritihari" target="_blank" class="text-blue-600 underline">@smritihari</a></p>
+      <p>Email: <a href="mailto:smritihari@gmail.com" class="text-blue-600 underline">smritihari@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/SmritiUofA" target="_blank" class="text-blue-600 underline">@smritihari</a></p>
     </section>
   </main>
 
-  <footer class="bg-gray-100 text-center py-4 text-sm text-gray-600">
+  <footer class="bg-gray-100 dark:bg-darkPurple text-center py-4 text-sm text-gray-600 dark:text-softPurple">
     © 2025 Smriti Hari
   </footer>
+
+  <script>
+    // Toggle dark mode class on <html>
+    document.getElementById('toggle-dark').addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+  </script>
 </body>
 
 </html>
